@@ -2,8 +2,6 @@
 
 require_once 'config.php';
 
-
-
 function getUserById($pdo, $id) {
   $sql = "SELECT * FROM `users` WHERE `id` = ".$id;
   $exe = $pdo->query($sql);
@@ -28,9 +26,7 @@ function getUsers($pdo){
                                  "id"        => $result->id,
                                  "password"  => $result->password));
   }
-
   return $listUsers;
-
 }
 
 
@@ -41,7 +37,7 @@ if (isset($_GET["action"]) && in_array($_GET["action"], $possible_url)) { //si l
   switch ($_GET["action"]) {
     case "get_user":
       if (isset($_GET["id"])) {
-        $value = getUserById($_GET["id"], $pdo); break;
+        $value = getUserById($pdo, $_GET["id"]); break;
       } else {
         $value = "Argument manquant"; break;
       }
