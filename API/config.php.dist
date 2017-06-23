@@ -1,0 +1,11 @@
+<?php
+
+define('USER','some');
+define('PASSWORD', 'some');
+define('DNS', 'mysql:host=localhost;dbname=bdd');
+
+try() {
+  $pdo = new PDO(DNS, USER, PASSWORD); //Create a PDO object
+} catch(PDOException $e) {
+  die($e->getMessage());
+}
