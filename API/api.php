@@ -32,7 +32,7 @@ function getUsers($pdo){
 
 
 function create($pdo, $pseudo, $content, $title){
-    $contenu = $content
+    $contenu = $content;
     if($pseudo == "" || $contenu == "" || $title == ""){
       $content = json_encode(["result" => []]);
     }else {
@@ -68,7 +68,7 @@ function delete($pdo, $id){
 }
 
 function update($pdo, $pseudo, $content, $title, $id){
-    $contenu = $content
+    $contenu = $content;
     if($pseudo == "" || $contenu == "" || $title == "" || $id == ""){
         $content = json_encode(["result" => []]);
     }else {
