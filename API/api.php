@@ -98,12 +98,7 @@ function getAll($pdo, $pseudo){
         $query = "SELECT * FROM todo WHERE `pseudo` = '$pseudo'";
         $responseQuery = $pdo->query($query)->fetchAll();
         foreach ($responseQuery as $result) {
-            unset($result[0]);
-            unset($result[1]);
-            unset($result[2]);
-            unset($result[3]);
-            unset($result[4]);
-            $tabResult[] = $result;
+            $tabResult.push($result);
         }
         $content = json_encode(["result" => $tabResult]);
     }
