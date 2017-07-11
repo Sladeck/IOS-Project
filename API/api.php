@@ -105,7 +105,7 @@ function getAll($pdo, $pseudo){
 }
 
 
-$possible_url = array("get_user","get_users","create","delete","update","getAll");
+$possible_url = array("get_user","get_users","create","delete","update","get_all");
 $value ="Une erreur est survenue !";
 
 if (isset($_GET["action"]) && in_array($_GET["action"], $possible_url)) { //si l'URL est OK
@@ -124,7 +124,7 @@ if (isset($_GET["action"]) && in_array($_GET["action"], $possible_url)) { //si l
       $value = delete($pdo, $_GET["id"]); break;
     case "update"
       $value = update($pdo, $_GET["pseudo"], $_GET["content"], $_GET["title"], $_GET["id"]); break;
-    case "getAll"
+    case "get_all"
       $value= getAll($pdo, $_GET["pseudo"]); break;
   }
   exit(json_encode($value));
