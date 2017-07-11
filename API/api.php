@@ -123,14 +123,14 @@ if (isset($_GET["action"]) && in_array($_GET["action"], $possible_url)) { //si l
       }
     case "get_users":
       $value = getUsers($pdo); break;
-    /* case "create":
+    case "create":
       $value = create($pdo, $_GET["pseudo"], $_GET["title"], $_GET["content"]); break;
     case "delete":
       $value = delete($pdo, $_GET["id"]); break;
     case "update"
       $value = update($pdo, $_GET["pseudo"], $_GET["content"], $_GET["title"], $_GET["id"]); break;
     case "getAll"
-      $value= getAll($pdo, $_GET["pseudo"]); break; */
+      $value= getAll($pdo, $_GET["pseudo"]); break;
   }
   exit(json_encode($value));
 }
