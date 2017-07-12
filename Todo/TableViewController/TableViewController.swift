@@ -81,6 +81,11 @@ class TableViewController: UITableViewController {
         Alamofire.request("http://localhost:8888/IOS-Project/API/api.php?action=get_user&pseudo="+"'"+self.author+"'").responseObject { (response: DataResponse<todo>) in
             let todoList = response.result.value
             print(response.result)
+                                                                                                                                       
+             if self.todoList == nil {
+                self.todoList = []
+            }
+                                                                                                                                       
             if let todoListObject = todoList {
                 self.todoList?.append(todoListObject)
             }
